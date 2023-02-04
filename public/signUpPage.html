@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kiwify Signup</title>
+    <link rel="stylesheet" href="signUpPage.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="CenteralContainer">
+
+        <h2>Criar nova conta </h2>
+        <div id="headingSignUpLink">
+            <span>Ou</span>
+            <a href=""> Eu li e aceito os termos</a>
+        </div>
+        <form id= "signup-form" action="/signup" method="post" class="subContainer">
+            <div class="inputBody">
+                <div class="labeledBody">
+                    <label for="name">Name: </label>
+                </div>
+                <input type="text" name="name" />
+
+            </div>
+
+            <div class="inputBody">
+                <div class="labeledBody">
+                    <label for="email">Email: </label>
+                </div>
+                <input type="text" name="email" />
+
+            </div>
+            <div class="inputBody">
+                <div class="labeledBody">
+                    <label for="password">Password: </label>
+                </div>
+                <input type="password" name="password" class="inputTextBox" />
+            </div>
+            <div class="inputBody " id="checkBoxBody">
+                <input type="checkbox" name="termsAndCondition" id="checkBoxTerms">
+                <p class="wrapBox anywhere"><br />Eu li e aceito os <u> termos de uso, termos de licença de uso de
+                        software, política de conteúdo</u> da Kiwify </p>
+                <!--de uso, termos de licença de uso de software, política de conteúdo da Kiwify </p> -->
+            </div>
+            <input type="submit" value="Sign up" class="submitBtn" />
+        </form>
+    </div>
+</body>
+<script>
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+      var checkbox = document.getElementById("checkBoxTerms");
+      if (!checkbox.checked) {
+        alert("Please accept the terms and conditions to continue.");
+        event.preventDefault();
+      }
+    });
+  </script>  
+</html>
